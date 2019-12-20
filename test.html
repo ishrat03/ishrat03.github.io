@@ -2,21 +2,72 @@
 <HEAD>
 	<TITLE>Ajax Testing</TITLE>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style type="text/css">
+		.nav
+		{
+			width: 100%;
+			background-color:greenyellow;
+			padding: 10px;
+		}
+		.nav a
+		{
+			text-decoration: none;
+			color:#6759b3f7;
+		}
+		.py
+		{
+			margin-top: 35px;
+		}
+		.py-2
+		{
+			margin-top: 20px;
+		}
+	</style>
 </HEAD>
 <BODY>
-	<h1>If you are here that means it is working.</h1>
+	<div class="nav">
+		<a href="webpages/index.html">Cookie</a>
+	</div>
+	<div>
+		<center>
+			<input type="text" placeholder="Enter text" id="text" class="py">
+			<button id="submit" class="py-2">Convert</button>
+		</center>
+	</div>
 	<center><h3><span id="apiText"></span></h3></center>
+	<!-- <audio controls="controls" autoplay>
+  		<source src="voice/hi.mp3"type="audio/mp3" id="audio" />
+	</audio> -->
+	<audio controls autoplay>
+  		<source src="voice/text.ogg" type="audio/ogg">
+  		Your browser does not support the audio element.
+	</audio>
 
 	<script type="text/javascript">
 		$(document).ready(function()
 		{
+			$('#submit').click(function()
+			{
+				var text = $('#text').val();
+				var url = 'http://localhost/auth/api';
+				var data = {text:text};
+				ajaxRequest(url, data);
+			})
+			
+		})
+
+		function ajaxRequest(url, data, method = 'POST')
+		{
 			$.ajax({
-				url:'https://blogapp03.000webhostapp.com/auth/api',
-				type:'POST',
+				url:url,
+				type:method,
 				dataType:'json',
+				data:data,
 				async:false,
 				success:function(response)
 				{
+					document.cookie = "apiresponse="+response.html;
+					document.cookie = "status=success";
 					$('#apiText').html(response.html);
 				},
 				error:function(response)
@@ -24,7 +75,7 @@
 					console.log(response.statusCode);
 				}
 			})
-		})
+		}
 	</script>
 </BODY>
 <HTML>
