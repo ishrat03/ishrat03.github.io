@@ -5,11 +5,25 @@
 </HEAD>
 <BODY>
 	<h1>If you are here that means it is working.</h1>
+	<center><h3><span id="apiText"></span></h3></center>
 
 	<script type="text/javascript">
 		$(document).ready(function()
 		{
-			alert('successfully landing');
+			$.ajax({
+				url:'http://blogapp03.000webhostapp.com/auth/api',
+				type:'POST',
+				dataType:'json',
+				async:false,
+				success:function(response)
+				{
+					$('#apiText').html(response.html);
+				},
+				error:function(response)
+				{
+					console.log(response.statusCode);
+				}
+			})
 		})
 	</script>
 </BODY>
