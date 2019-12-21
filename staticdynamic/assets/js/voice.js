@@ -1,6 +1,7 @@
 $(document).ready(function()
 {
 	audio('welcome.mp3');
+	
 	$('#submit').click(function()
 	{
 		initialFunction($('#text').val());
@@ -9,6 +10,16 @@ $(document).ready(function()
 	$('#cookie').on('mouseover', function()
 	{
 		audio('cookie.mp3');
+	});
+
+	$('#home').on('mouseover', function()
+	{
+		audio('home.mp3');
+	});
+
+	$('#convert').on('mouseover', function()
+	{
+		audio('text-converter.mp3');
 	});
 	
 })

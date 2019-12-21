@@ -35,5 +35,9 @@
 }
 .link-item
 {
-	color: #f6f5f5;
+	display: inline;
+}
+.nav-href a
+{
+	color:#fafafa;
 }
