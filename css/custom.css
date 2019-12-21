@@ -1,0 +1,35 @@
+.nav
+{
+	width: 100%;
+	background-color:greenyellow;
+	padding: 10px;
+	display: inline-block;
+	height: 6%;
+}
+.nav a
+{
+	text-decoration: none;
+	color:#6759b3f7;
+}
+.py
+{
+	margin-top: 35px;
+}
+.py-2
+{
+	margin-top: 20px;
+}
+.brand
+{
+	font-size: 27px;
+	font-weight: bold;
+	color: #7f97c3e6;
+	float: left;
+}
+.nav-link
+{
+	list-style: none;
+	position: absolute;
+	right: 1%;
+	top:2%;
+}

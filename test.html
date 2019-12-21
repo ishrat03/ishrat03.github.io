@@ -2,31 +2,15 @@
 <HEAD>
 	<TITLE>Ajax Testing</TITLE>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<style type="text/css">
-		.nav
-		{
-			width: 100%;
-			background-color:greenyellow;
-			padding: 10px;
-		}
-		.nav a
-		{
-			text-decoration: none;
-			color:#6759b3f7;
-		}
-		.py
-		{
-			margin-top: 35px;
-		}
-		.py-2
-		{
-			margin-top: 20px;
-		}
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
 	</style>
 </HEAD>
 <BODY>
 	<div class="nav">
-		<a href="webpages/index.html">Cookie</a>
+		<a href="webpages/index.html" id="cookie"><span class="brand">Cookie</span></a>
+		<ul class="nav-link">
+			<li>Home</li>
+		</ul>
 	</div>
 	<div>
 		<center>
@@ -34,25 +18,21 @@
 			<button id="submit" class="py-2">Convert</button>
 		</center>
 	</div>
-	<center><h3><span id="apiText"></span></h3></center>
-	<!-- <audio controls="controls" autoplay>
-  		<source src="voice/hi.mp3"type="audio/mp3" id="audio" />
-	</audio> -->
-	<audio controls autoplay>
-  		<source src="voice/text.ogg" type="audio/ogg">
-  		Your browser does not support the audio element.
-	</audio>
-
+	<center><h3 style="display: none;"><span id="apiText"></span></h3></center>
+	
 	<script type="text/javascript">
 		$(document).ready(function()
 		{
+			audio('welcome.mp3');
 			$('#submit').click(function()
 			{
-				var text = $('#text').val();
-				var url = 'http://localhost/auth/api';
-				var data = {text:text};
-				ajaxRequest(url, data);
+				initialFunction($('#text').val());
 			})
+
+			$('#cookie').on('mouseover', function()
+			{
+				audio('cookie.mp3');
+			});
 			
 		})
 
@@ -75,6 +55,18 @@
 					console.log(response.statusCode);
 				}
 			})
+		}
+
+		function initialFunction(text)
+		{
+			var url = 'http://localhost/youtubetomp3/auth/api';
+			var data = {text:text};
+			ajaxRequest(url, data);
+		}
+
+		function audio(audio)
+		{
+			$('#apiText').html('<audio controls autoplay><source src="voice/'+audio+'" type="audio/mp3"></audio>');
 		}
 	</script>
 </BODY>
