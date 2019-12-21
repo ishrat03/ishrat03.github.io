@@ -3,9 +3,19 @@ $(document).ready(function()
 	audio('welcome.mp3');
 	$('#audioplay').trigger('play');
 	
-	$('#submit').click(function()
+	$('.submit').click(function()
 	{
-		initialFunction($('#text').val());
+		var username = $('#username').val();
+		var password = $('#password').val();
+		var data = {username:username, password:password, requestFrom:'static'};
+		var url = 'http://blogapp03.000webhostapp.com/auth/validateUser';
+		var result = ajaxRequest(url, data);
+		if (result.status == 'valid')
+		{
+			document.cookie = "id="+result.data.id;
+			document.cookie = "name="+result.data.name;
+			window.location.replace('webpages/index.html');
+		}
 	})
 
 	$('#cookie').on('mouseover', function()
@@ -48,6 +58,7 @@ $(document).ready(function()
 
 function ajaxRequest(url, data, method = 'POST')
 {
+	var result;
 	$.ajax({
 		url:url,
 		type:method,
@@ -56,15 +67,15 @@ function ajaxRequest(url, data, method = 'POST')
 		async:false,
 		success:function(response)
 		{
-			document.cookie = "apiresponse="+response.html;
-			document.cookie = "status=success";
-			$('#apiText').html(response.html);
+			result = response;
 		},
 		error:function(response)
 		{
 			console.log(response.statusCode);
 		}
 	})
+
+	return result;
 }
 
 function initialFunction(text)
