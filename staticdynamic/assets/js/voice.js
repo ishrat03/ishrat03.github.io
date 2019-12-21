@@ -1,6 +1,7 @@
 $(document).ready(function()
 {
 	audio('welcome.mp3');
+	$('#audioplay').trigger('play');
 	
 	$('#submit').click(function()
 	{
@@ -21,6 +22,27 @@ $(document).ready(function()
 	{
 		audio('text-converter.mp3');
 	});
+
+	$('#username').on('click', function()
+	{
+		audio('username.mp3');
+	});
+
+	$('#password').on('click', function()
+	{
+		audio('password.mp3');
+	})
+
+	$('.submit').on('mouseover', function()
+	{
+		var username = $('#username').val();
+		var password = $('#password').val();
+
+		if (username != '' || password != '')
+		{
+			audio('submit.mp3');
+		}
+	})
 	
 })
 
@@ -54,5 +76,5 @@ function initialFunction(text)
 
 function audio(audio)
 {
-	$('#apiText').html('<audio controls autoplay><source src="voice/'+audio+'" type="audio/mp3"></audio>');
+	$('#apiText').html('<audio controls autoplay id="audioplay"><source src="voice/'+audio+'" type="audio/mp3"></audio>');
 }

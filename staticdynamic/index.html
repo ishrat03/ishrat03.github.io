@@ -3,6 +3,7 @@
 	<TITLE>Ajax Testing</TITLE>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/signin.css">
 	</style>
 </HEAD>
 <BODY>
@@ -14,12 +15,31 @@
 		</ul>
 	</div>
 	<div>
-		<center>
-			<input type="text" placeholder="Enter text" id="text" class="py">
-			<button id="submit" class="py-2">Convert</button>
-		</center>
+		<div class="container">
+			<h2>It's now or never</h2>
+			<h1>Come on , Join us!</h1>
+		  
+			<form action="" id="join-us">
+				<div class="fields">
+					<span>
+						<input placeholder="Username" type="text" id="username" />
+					</span>
+					<br/>
+					<span>
+						<input placeholder="Password" type="password" id="password"/>
+					</span>
+				</div>
+			<div class="submit">
+				<input class="submit" value="Login" type="button" />
+			</div>
+			</form>
+		</div>
 	</div>
-	<center><h3 style="display: none;"><span id="apiText"></span></h3></center>
+	<center><span id="apiText" style="display: none;">
+		<audio class="audios" id="audioplay" controls preload="none"> 
+			<source src="voice/welcome.mp3" type="audio/mp3">
+		</audio>
+	</span></center>
 	
 	<script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
 	<script type="text/javascript" src="assets/js/voice.js"></script>
