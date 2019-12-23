@@ -1,5 +1,9 @@
 $(document).ready(function()
 {
+	if (typeof $.cookie('id') != 'undefined')
+	{
+		window.location.replace('webpages/index.html');
+	}
 	audio('welcome.mp3');
 	$('#audioplay').trigger('play');
 	
@@ -16,21 +20,6 @@ $(document).ready(function()
 			document.cookie = "name="+result.data.name;
 			window.location.replace('webpages/index.html');
 		}
-	})
-
-	$('#cookie').on('mouseover', function()
-	{
-		audio('cookie.mp3');
-	});
-
-	$('#home').on('mouseover', function()
-	{
-		audio('home.mp3');
-	});
-
-	$('#convert').on('mouseover', function()
-	{
-		audio('text-converter.mp3');
 	});
 
 	$('#username').on('click', function()
