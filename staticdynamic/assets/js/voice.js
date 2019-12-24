@@ -1,5 +1,9 @@
 $(document).ready(function()
 {
+	if (typeof $.cookie('id') != 'undefined')
+	{
+		window.location.replace('webpages/index.html');
+	}
 	audio('welcome.mp3');
 	$('#audioplay').trigger('play');
 	
@@ -8,7 +12,7 @@ $(document).ready(function()
 		var username = $('#username').val();
 		var password = $('#password').val();
 		var data = {username:username, password:password, requestFrom:'static'};
-		var url = 'http://localhost/auth/validateUser';
+		var url = 'https://blogapp03.000webhostapp.com/auth/validateUser';
 		var result = ajaxRequest(url, data);
 		if (result.status == 'valid')
 		{
@@ -16,26 +20,12 @@ $(document).ready(function()
 			$.cookie('name', result.data.nam);
 			window.location.replace('webpages/index.html');
 		}
+
 		else if (result.status == 'invalid')
 		{
 			alert('Invalid username or password');
 		}
 	})
-
-	$('#cookie').on('mouseover', function()
-	{
-		audio('cookie.mp3');
-	});
-
-	$('#home').on('mouseover', function()
-	{
-		audio('home.mp3');
-	});
-
-	$('#convert').on('mouseover', function()
-	{
-		audio('text-converter.mp3');
-	});
 
 	$('#username').on('click', function()
 	{
