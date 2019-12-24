@@ -12,15 +12,20 @@ $(document).ready(function()
 		var username = $('#username').val();
 		var password = $('#password').val();
 		var data = {username:username, password:password, requestFrom:'static'};
-		var url = 'http://blogapp03.000webhostapp.com/auth/validateUser';
+		var url = 'https://blogapp03.000webhostapp.com/auth/validateUser';
 		var result = ajaxRequest(url, data);
 		if (result.status == 'valid')
 		{
-			document.cookie = "id="+result.data.id;
-			document.cookie = "name="+result.data.name;
+			$.cookie('id', result.data.id);
+			$.cookie('name', result.data.nam);
 			window.location.replace('webpages/index.html');
 		}
-	});
+
+		else if (result.status == 'invalid')
+		{
+			alert('Invalid username or password');
+		}
+	})
 
 	$('#username').on('click', function()
 	{
