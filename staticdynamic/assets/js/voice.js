@@ -12,12 +12,13 @@ $(document).ready(function()
 		var username = $('#username').val();
 		var password = $('#password').val();
 		var data = {username:username, password:password, requestFrom:'static'};
-		var url = 'https://blogapp03.000webhostapp.com/auth/validateUser';
+		var url = baseUrl;
 		var result = ajaxRequest(url, data);
 		if (result.status == 'valid')
 		{
+			console.log(result);
 			$.cookie('id', result.data.id);
-			$.cookie('name', result.data.nam);
+			$.cookie('name', result.data.name);
 			window.location.replace('webpages/index.html');
 		}
 

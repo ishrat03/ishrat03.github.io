@@ -1,11 +1,10 @@
 $(document).ready(function()
 {
-	if (typeof $.cookie('test') === 'undefined')
+	if (typeof $.cookie('id') === 'undefined')
 	{
 		window.location.replace('../index.html');
 	}
 	
-	$.cookie('test', 'this is testing');
 	$('#home').click(function(e)
 	{
 		e.preventDefault();

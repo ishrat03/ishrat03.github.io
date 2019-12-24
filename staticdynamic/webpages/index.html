@@ -3,7 +3,8 @@
 <head>
 	<title>Index Page</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="../assets/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/initialVariable.js"></script>
 	<script src="../jquery-cookie/src/jquery.cookie.js"></script>
 	<script type="text/javascript" src="../assets/js/dashboardVoice.js"></script>
 	<script type="text/javascript" src="../assets/js/menu.js"></script>
@@ -16,9 +17,9 @@
 		<ul class="nav-link">
 			<li class="link-item nav-href"><a href="#" id="home">Home</a></li>
 			<li class="link-item nav-href"><a href="#" id="convert">Text Convert</a></li>
+			<li class="link-item nav-href"><a href="#" id="logout">Logout</a></li>
 		</ul>
 	</div>
-	<div><center><h1 id="name"></h1></center></div>
 	<div id="content"></div>
 
 <script type="text/javascript">
@@ -26,7 +27,35 @@
 	{
 		window.location.replace('../index.html');
 	}
-	$('#name').html($.cookie('name'));
+	
+	$('#logout').click(function(e)
+	{
+		e.preventDefault();
+		deleteAllCookies();
+		// var cookies = $.cookie();
+		// $.cookie(cookies.id, 'undefined', { path: '/' });
+		// console.log(cookies);
+		// for(var cookie in cookies)
+		// {
+		// 	$.removeCookie(cookie);
+		// 	$.removeCookie('name', { path: '/' });
+		// }
+
+		// console.log(cookies);
+	})
+
+	function deleteAllCookies()
+	{
+    	var cookies = document.cookie.split(";");
+
+    	for (var i = 0; i < cookies.length; i++)
+    	{
+        	var cookie = cookies[i];
+        	var eqPos = cookie.indexOf("=");
+        	var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        	document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    	}
+	}
 </script>
 </body>
 </html>
