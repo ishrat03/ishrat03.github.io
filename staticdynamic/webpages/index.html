@@ -32,13 +32,12 @@
 	{
 		e.preventDefault();
 		var cookies = $.cookie();
-		console.log(cookies);
 		for(var cookie in cookies)
 		{
 			$.removeCookie(cookie, { path: cookiePath});
 		}
 
-		console.log(cookies);
+		location.reload(true);
 	})
 </script>
 </body>
