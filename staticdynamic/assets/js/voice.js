@@ -16,7 +16,6 @@ $(document).ready(function()
 		var result = ajaxRequest(url, data);
 		if (result.status == 'valid')
 		{
-			console.log(result);
 			$.cookie('id', result.data.id);
 			$.cookie('name', result.data.name);
 			window.location.replace('webpages/index.html');
