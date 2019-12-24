@@ -2,13 +2,21 @@
 <html>
 <head>
 	<title>Index Page</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="../jquery-cookie/src/jquery.cookie.js"></script>
 </head>
 <body>
-	<div><center><h1 id="name"></h1></center></div>
+	<div class="nav">
+		<a href="webpages/index.html" id="cookie"><span class="brand">Cookie</span></a>
+		<ul class="nav-link">
+			<li class="link-item nav-href" id="home"><a href="index.html">Home</a></li>
+			<li class="link-item nav-href" id="convert"><a href="texttovoice.html">Text Convert</a></li>
+		</ul>
+	</div>
+
+	<div id="content"></div>
+	<script type="text/javascript" src="../assets/js/menu.js"></script>
+	<script type="text/javascript" src="../assets/js/menuAjax.js"></script>
 </body>
-<script type="text/javascript">
-	$('#name').html($.cookie('name'));
-</script>
 </html>
