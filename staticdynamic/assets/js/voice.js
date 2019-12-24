@@ -12,7 +12,7 @@ $(document).ready(function()
 		var username = $('#username').val();
 		var password = $('#password').val();
 		var data = {username:username, password:password, requestFrom:'staticdynamic'};
-		var url = baseUrl;
+		var url = baseUrl + 'auth/validateUser';
 		var result = ajaxRequest(url, data);
 		if (result.status == 'valid')
 		{
