@@ -8,7 +8,7 @@ $(document).ready(function()
 	$('#home').click(function(e)
 	{
 		e.preventDefault();
-		var url = 'https://blogapp03.000webhostapp.com/youtubeVideos/playlist';
+		var url = baseUrl + 'youtubeVideos/playlist'; 
 		var data = {id: $.cookie('id'), requestFrom:'staticdynamic'};
 
 		var result = ajaxPost(url, data);
