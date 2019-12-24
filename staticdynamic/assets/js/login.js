@@ -18,6 +18,7 @@ $(document).ready(function()
 		{
 			$.cookie('id', result.data.id);
 			$.cookie('name', result.data.name);
+			$.cookie('key', result.key);
 			window.location.replace('webpages/index.html');
 		}
 
