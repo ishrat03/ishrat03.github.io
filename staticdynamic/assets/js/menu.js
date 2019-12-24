@@ -8,9 +8,21 @@ $(document).ready(function()
 	$('#home').click(function(e)
 	{
 		e.preventDefault();
-		var url = 'dashboard.html',
-		data = '';
-		menuAjax(url, data);
+		// var url = 'dashboard.html',
+		// data = '';
+		// menuAjax(url, data);
+		var url = 'http://localhost/youtubeVideos/playlist';
+		var data = {id: $.cookie('id'), requestFrom:'staticdynamic'};
+
+		var result = ajaxPost(url, data);
+		if (result.status == 'success')
+		{
+			$('#content').html(result.html);
+		}
+		else
+		{
+			alert(result.msg);
+		}
 	})
 
 	$('#convert').click(function(e)
