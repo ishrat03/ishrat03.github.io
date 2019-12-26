@@ -9,12 +9,12 @@ $(document).ready(function()
 	{
 		e.preventDefault();
 		var url = baseUrl + 'youtubeVideos/playlist'; 
-		var data = {id: $.cookie('id'), requestFrom:'staticdynamic',key:$.cookie('key')};
+		var data = {id: $.cookie('id')};
 
 		var result = ajaxPost(url, data);
 		if (result.status == 'success')
 		{
-			$('#content').html(result.html);
+			$('#content').html(result.data);
 		}
 		else
 		{
