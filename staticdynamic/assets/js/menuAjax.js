@@ -18,7 +18,7 @@ function ajaxPost(url, data)
 	{
 		url:url,
 		type:'post',
-		headers:{'KEY':$.cookie('key')},
+		//headers:{'KEY':$.cookie('key')},
 		data:data,
 		dataType:'json',
 		async:false,
