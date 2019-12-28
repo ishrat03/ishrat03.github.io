@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login/signup form animation</title>
-  <link rel="stylesheet" href="assets/css/style1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login/signup form animation</title>
+    <link rel="stylesheet" href="assets/css/style1.css">
 
 </head>
 <body>
@@ -12,21 +12,21 @@
 		<div class="signup slide-up">
 			<h2 class="form-title" id="signup">Sign up</h2>
 			<div class="form-holder">
-				<input type="text" class="input" placeholder="Name" />
-				<input type="email" class="input" placeholder="Email" />
-				<input type="password" class="input" placeholder="Password" />
-				<input type="password" class="input" placeholder="Repeat Password" />
+			  <input type="text" class="input" placeholder="Name" id="name" />
+				<input type="email" class="input" placeholder="Email" id="email" />
+				<input type="password" class="input" placeholder="Password" id="password"/>
+				<input type="password" class="input" placeholder="Repeat Password" id="rpassword" />
 			</div>
-			<button class="submit-btn">Sign up</button>
+			<button class="submit-btn" id="signup1">Sign up</button>
 		</div>
 		<div class="login">
 			<div class="center">
 				<h2 class="form-title" id="login"><span>or</span id='hit'>Log in</h2>
 				<div class="form-holder">
-					<input type="email" class="input" placeholder="Email" />
-					<input type="password" class="input" placeholder="Password" />
+					<input type="email" class="input" placeholder="Email" id="lusername"/>
+					<input type="password" class="input" placeholder="Password" id="lpassword" />
 				</div>
-				<button class="submit-btn">Log in</button>
+				<button class="submit-btn" id="login1">Log in</button>
 			</div>
 		</div>
 	</div>
@@ -34,6 +34,11 @@
   	<script  src="assets/js/script.js"></script>
   	<script  src="assets/js/jquery.js"></script>
   	<script  src="assets/js/customstyle.js"></script>
+    <script type="text/javascript" src="assets/js/ajaxRequest/ajaxRequest.js"></script>
+    <script type="text/javascript" src="assets/js/ajaxRequest/signup.js"></script>
+    <script type="text/javascript" src="assets/js/ajaxRequest/login.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="assets/js/initialcheck.js"></script>
 
 </body>
 </html>
