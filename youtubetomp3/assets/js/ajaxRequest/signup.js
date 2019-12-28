@@ -22,7 +22,7 @@ $('#signup1').click(function()
 		$.cookie('name', result.data.name);
 		$.cookie('id', result.data.id);
 		$.cookie('key', result.key);
-		window.location.replace('dashboard/index.html');
+		window.location.replace('dashboard/dashboard.html');
 	}
 	else
 	{
