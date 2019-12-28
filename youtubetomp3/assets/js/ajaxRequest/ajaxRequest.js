@@ -3,7 +3,7 @@ function postRequest(url, data)
     var result;
     $.ajax(
     {
-        url:'https://blogapp03.000webhostapp.com/youtubetomp3/'+url,
+        url:'https://blogapp03.000webhostapp.com/'+url,
         type:'post',
         dataType:'json',
         data:data,
