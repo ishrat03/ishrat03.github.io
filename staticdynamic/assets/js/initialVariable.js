@@ -1,2 +1,2 @@
-var baseUrl = 'https://blogapp03.000webhostapp.com/';
-var cookiePath = '/staticdynamic';
+var baseUrl = 'http://localhost/youtubetomp3/';
+var cookiePath = '/ishrat/ishrat03/staticdynamic';
