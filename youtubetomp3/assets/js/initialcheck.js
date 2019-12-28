@@ -1,6 +1,6 @@
 if (typeof $.cookie('id') != 'undefined')
 {
-	window.location.replace('dashboard/index.html');
+	window.location.replace('dashboard/dashboard.html');
 }
 
 function validateFields(username, password)
