@@ -1,8 +1,17 @@
+var i = 0;
+var txt;
+var speed = 50;
 $('#login1').click(function()
 {
+	i = 0;
+	txt = '';
 	var username = $('#lusername').val();
 	var password = $('#lpassword').val();
-
+	$('#error').html('');
+	if (validateFields(username, password) == false)
+	{
+		return true;
+	}
 	var url = 'auth/validateUser';
 	var data = {username:username, password:password, requestFrom:'staticdynamic'};
 	var result = postRequest(url, data);
