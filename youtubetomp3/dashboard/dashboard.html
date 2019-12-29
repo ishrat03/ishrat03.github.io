@@ -96,8 +96,8 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
                         <ul class="nav navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a href="#" class="nav-link" data-toggle="dropdown">
-                                    <i class="nc-icon nc-palette"></i>
+                                <a href="#" class="nav-link" data-toggle="modal" data-target="#youtubeVideos" id="down">
+                                    <i class="fas fa-chevron-down"></i>
                                     <span class="d-lg-none">Dashboard</span>
                                 </a>
                             </li>
@@ -156,31 +156,45 @@
                 </div>
             </nav>
             <!-- End Navbar -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card strpied-tabled-with-hover">
-                                <div class="card-header ">
-                                    <h4 class="card-title text-center">Custom Playlist</h4>
-                                    <p class="card-category text-center">Added by the user.</p>
-                                </div>
-                                <div class="card-body table-full-width table-responsive">
-                                    <table class="table table-hover table-striped">
-                                        <thead>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Snapshot</th>
-                                            <th>Action</th>
-                                        </thead>
-                                        <tbody id="playlistContents">
-                                        </tbody>
-                                    </table>
-                                </div>
+
+            <div class="modal fade" id="youtubeVideos" tabindex="-1" role="dialog" aria-labelledby="modalLabelLarge" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body youtubeVideos">
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <span id="addVideo"></span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="content">
+                <div class="container-fluid">
+                	<div class="row">
+                		<div class="col-md-12">
+                			<div class="card strpied-tabled-with-hover">
+                				<div class="card-header ">
+                					<h4 class="card-title text-center">Custom Playlist</h4>
+                					<p class="card-category text-center">Added by the user.</p>
+                				</div>
+                				<div class="card-body table-full-width table-responsive">
+                					<table class="table table-hover table-striped">
+                						<thead>
+                							<th>ID</th>
+                							<th>Name</th>
+                							<th>Snapshot</th>
+                							<th>Action</th>
+                						</thead>
+                						<tbody id="playlistContents">
+                						</tbody>
+                					</table>
+                				</div>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+
             </div>
             <footer class="footer">
                 <div class="container-fluid">
@@ -321,6 +335,7 @@
 <script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
+<script type="text/javascript" src="../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
