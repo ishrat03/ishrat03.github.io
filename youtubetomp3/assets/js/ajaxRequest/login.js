@@ -19,6 +19,7 @@ $('#login1').click(function()
 	{
 		$.cookie('name', result.data.name);
 		$.cookie('id', result.data.id);
+		$.cookie('username', result.data.username);
 		$.cookie('key', result.key);
 		window.location.replace('dashboard/dashboard.html');
 	}
