@@ -25,7 +25,7 @@ function postRequest(url, data)
     return result;
 }
 
-function getMenu(menu)
+function getMenu(menu, load)
 {
     $.ajax(
         {
@@ -33,15 +33,16 @@ function getMenu(menu)
             type:'get',
             beforeSend:function()
             {
-
+                $('.'+load).addClass('loader');
             },
             success:function(response)
             {
                 $('.content').html(response);
+                $('.'+load).removeClass('loader');
             },
             error:function(response)
             {
-
+                $('.'+load).removeClass('loader');
             }
         }
     )
