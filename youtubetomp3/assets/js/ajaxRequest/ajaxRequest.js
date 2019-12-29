@@ -24,3 +24,25 @@ function postRequest(url, data)
 
     return result;
 }
+
+function getMenu(menu)
+{
+    $.ajax(
+        {
+            url:menu,
+            type:'get',
+            beforeSend:function()
+            {
+
+            },
+            success:function(response)
+            {
+                $('.content').html(response);
+            },
+            error:function(response)
+            {
+
+            }
+        }
+    )
+}
