@@ -1,7 +1,19 @@
 var i = 0;
 var txt;
 var speed = 50;
-$('#login1').click(function()
+$('#login1').click(function(e)
+{
+	e.preventDefault();
+	login();
+})
+
+$('#loginForm').submit(function(e)
+{
+	e.preventDefault();
+	login();
+});
+
+function login()
 {
 	i = 0;
 	txt = '';
@@ -27,4 +39,4 @@ $('#login1').click(function()
 	{
 		alert('Invalid username or password');
 	}
-})
+}
