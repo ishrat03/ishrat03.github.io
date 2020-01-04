@@ -5,17 +5,50 @@ $(document).ready(function()
 $('#userProfile').click(function(e)
 {
 	e.preventDefault();
-	$('#userProfile').addClass('active');
-	$('#'+currentMenu).removeClass('active');
-	currentMenu = 'userProfile';
 	getMenu('userProfile.html', 'userloader');
+	setActive('userProfile');
 })
 
 $('#dashboardMenu').click(function(e)
 {
 	e.preventDefault();
-	$('#dashboardMenu').addClass('active');
-	$('#'+currentMenu).removeClass('active');
-	currentMenu = 'dashboardMenu';
 	getMenu('playlist.html', 'dashboardloader');
+	setActive('dashboardMenu');
 })
+
+$('#table').click(function(e)
+{
+	e.preventDefault();
+	showMessage('warning', 'Comming soon', 'center');
+});
+
+$('#typography').click(function(e)
+{
+	e.preventDefault();
+	showMessage('warning', 'Comming soon', 'center');
+});
+
+$('#icons').click(function(e)
+{
+	e.preventDefault();
+	showMessage('warning', 'Comming soon', 'center');
+});
+
+$('#maps').click(function(e)
+{
+	e.preventDefault();
+	showMessage('warning', 'Comming soon', 'center');
+});
+
+$('#notification').click(function(e)
+{
+	e.preventDefault();
+	showMessage('warning', 'Comming soon', 'center');
+});
+
+function setActive(change)
+{
+	$('#'+change).addClass('active');
+	$('#'+currentMenu).removeClass('active');
+	currentMenu = change;
+}
