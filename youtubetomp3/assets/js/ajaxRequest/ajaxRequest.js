@@ -47,3 +47,34 @@ function getMenu(menu, load)
         }
     )
 }
+
+function postRequestWithImage(url, data)
+{
+    var result;
+    $.ajax(
+		{
+			url:'http://localhost/youtubetomp3/'+url,
+			type:'post',
+			dataType:'json',
+			data:data,
+			processData:false,
+			contentType:false,
+			cache:false,
+			async:false,
+			beforeSend:function()
+			{
+
+			},
+			success:function(data)
+			{
+                result = data;
+			},
+			error:function(data)
+			{
+				result = data;
+			}
+		}
+	)
+
+    return result;
+}

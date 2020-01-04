@@ -1,5 +1,10 @@
 $(document).ready(function()
 {
+	getInitialPlaylists();
+})
+
+function getInitialPlaylists()
+{
 	var url = 'youtubeVideos/playlist';
 	var data = {requestFrom:'staticdynamic',key:$.cookie('key'), id:$.cookie('id')};
 
@@ -12,7 +17,7 @@ $(document).ready(function()
 			$('#playlistContents').append('<tr onclick='+"'"+'videosAction("'+value.id+'", "'+value.snapshot+'","'+value.playlists+'")'+"'"+'><td>'+(index + 1)+'</td><td>'+value.name + '</td><td><img src="http://blogapp03.000webhostapp.com/assets/snapshots/'+ value.snapshot + '" class="img-thumbnail" style="width: 100px" alt="agar dil kahe ki"></td> <td><i class="fas fa-trash-alt"></i></td><tr>');
 		})
 	}
-})
+}
 
 function videosAction(id, snapshot, playlist)
 {
