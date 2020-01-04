@@ -6,20 +6,21 @@ $('#userProfile').click(function(e)
 {
 	e.preventDefault();
 	getMenu('userProfile.html', 'userloader');
-	setActive('userProfile');
+	setActive('userProfile', 'User Profile');
 })
 
 $('#dashboardMenu').click(function(e)
 {
 	e.preventDefault();
 	getMenu('playlist.html', 'dashboardloader');
-	setActive('dashboardMenu');
+	setActive('dashboardMenu', 'Dashboard');
 })
 
-$('#table').click(function(e)
+$('#youtube').click(function(e)
 {
 	e.preventDefault();
-	showMessage('warning', 'Comming soon', 'center');
+	getMenu('table.html', 'youtubeloader');
+	setActive('youtube', 'Youtube');
 });
 
 $('#typography').click(function(e)
@@ -46,9 +47,10 @@ $('#notification').click(function(e)
 	showMessage('warning', 'Comming soon', 'center');
 });
 
-function setActive(change)
+function setActive(change, title)
 {
 	$('#'+change).addClass('active');
 	$('#'+currentMenu).removeClass('active');
 	currentMenu = change;
+	$('#titlebar').text(title);
 }
