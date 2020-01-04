@@ -17,11 +17,11 @@ $('#playlistItem').submit(function(e)
     }
 })
 
-function showMessage(icon, message)
+function showMessage(icon, message, position = 'top-end')
 {
 	Swal.fire(
 	{
-		position: 'top-end',
+		position: position,
 		icon: icon,
 		title: message,
 		showConfirmButton: false,
