@@ -21,10 +21,10 @@ function getInitialPlaylists()
 
 function videosAction(id, snapshot, playlist)
 {
-	alert(playlist);
+	alertSelect(id, snapshot, playlist);
 }
 
-function alert(playlist)
+function alertSelect(id, snapshot, playlist)
 {
 	const swalWithBootstrapButtons = Swal.mixin({
   		customClass: {
@@ -49,11 +49,25 @@ function alert(playlist)
   	} else if (
     	/* Read more about handling dismissals below */
     	result.dismiss === Swal.DismissReason.cancel
-  	) {
-    	swalWithBootstrapButtons.fire(
-      		'Cancelled',
-      		'Your imaginary file is safe :)',
-      		'error'
-    		)}
+  	)
+	{
+		var data = {id:id, snapshot:snapshot, requestFrom: 'staticdynamic', key: $.cookie('key')};
+		var url = 'youtubeVideos/deletePlaylist';
+
+		var response = postRequest(url, data);
+		if (response.status == 'success')
+		{
+			showMessage('success', 'Playlist deleted successfully', 'center');
+			getInitialPlaylists();
+		}
+		else
+		{
+			swalWithBootstrapButtons.fire(
+	      		'Facing technical error!',
+	      		'Your imaginary file is safe :)',
+	      		'error'
+	    		)
+		}
+	}
 	})
 }
