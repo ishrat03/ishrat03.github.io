@@ -12,6 +12,7 @@ $('#playlistItem').submit(function(e)
         showMessage('success', "Playlist insertd successfully.");
         $('#insertPlaylist').text('Add');
         $('#close').trigger('click');
+        $('#playlistItem')[0].reset();
         getInitialPlaylists();
     }
 })
