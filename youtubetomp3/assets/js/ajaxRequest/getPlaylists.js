@@ -44,7 +44,7 @@ function alertSelect(id, snapshot, playlist)
 		reverseButtons: true
 	}).then((result) => {
   	if (result.value) {
-		$('#addVideo').html('<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'+playlist+'" allowfullscreen autoplay></iframe>');
+		$('#addVideo').html('<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/'+playlist+'/?autoplay=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>');
 		$('#down').trigger('click');
   	} else if (
     	/* Read more about handling dismissals below */
