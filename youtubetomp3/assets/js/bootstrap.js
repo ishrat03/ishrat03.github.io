@@ -2152,7 +2152,7 @@
   var ClassName$5 = {
     SCROLLABLE: 'modal-dialog-scrollable',
     SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
-    BACKDROP: 'modal-backdrop',
+    BACKDROP: 'modal',
     OPEN: 'modal-open',
     FADE: 'fade',
     SHOW: 'show',
