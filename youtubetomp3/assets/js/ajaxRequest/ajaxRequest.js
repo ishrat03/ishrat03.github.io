@@ -1,4 +1,4 @@
-function postRequest(url, data)
+function postRequest(url, data, beforeLoad = '', id = '')
 {
     var result;
     $.ajax(
@@ -10,7 +10,10 @@ function postRequest(url, data)
         async:false,
         beforeSend:function()
         {
-
+            if (beforeLoad != '')
+            {
+                $('#'+id).text(beforeLoad);
+            }
         },
         success:function(response)
         {

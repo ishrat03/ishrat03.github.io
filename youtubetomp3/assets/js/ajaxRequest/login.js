@@ -17,16 +17,18 @@ function login()
 {
 	i = 0;
 	txt = '';
+	// $('#login1').text('Authorizing....');
 	var username = $('#lusername').val();
 	var password = $('#lpassword').val();
 	$('#error').html('');
 	if (validateFields(username, password) == false)
 	{
+		$('#login1').text('Log In');
 		return true;
 	}
 	var url = 'auth/validateUser';
 	var data = {username:username, password:password, requestFrom:'staticdynamic'};
-	var result = postRequest(url, data);
+	var result = postRequest(url, data, 'Authorizing...', 'login1');
 	if (result.status == 'valid')
 	{
 		$.cookie('name', result.data.name);
@@ -37,6 +39,9 @@ function login()
 	}
 	else if (result.status == 'invalid')
 	{
-		alert('Invalid username or password');
+		txt = 'Invalid username or password';
+		typeWriter();
+		$('#login1').text('Log In');
+		// alert('Invalid username or password');
 	}
 }
