@@ -17,7 +17,7 @@ function login()
 {
 	i = 0;
 	txt = '';
-	// $('#login1').text('Authorizing....');
+	$('#login1').text('Authorizing....');
 	var username = $('#lusername').val();
 	var password = $('#lpassword').val();
 	$('#error').html('');
@@ -42,6 +42,5 @@ function login()
 		txt = 'Invalid username or password';
 		typeWriter();
 		$('#login1').text('Log In');
-		// alert('Invalid username or password');
 	}
 }
