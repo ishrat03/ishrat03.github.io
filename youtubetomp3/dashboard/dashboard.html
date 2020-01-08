@@ -147,7 +147,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal1">Add Playlist</a>
                                     <div class="divider"></div>
-                                    <a class="dropdown-item" href="#" id="logout">
+                                    <a class="dropdown-item" href="#" id="logoutFull">
                                         <span class="no-icon">Logout <i class="fas fa-sign-out-alt"></i></span>
                                     </a>
                                 </div>
@@ -348,7 +348,18 @@
     $('#logout').click(function(e)
 	{
 		e.preventDefault();
-		var cookies = $.cookie();
+        logout();
+	});
+
+    $('#logoutFull').click(function(e)
+    {
+        e.preventDefault();
+        logout();
+    })
+
+    function logout()
+    {
+        var cookies = $.cookie();
         console.log(cookies);
 		for(var cookie in cookies)
 		{
@@ -356,7 +367,7 @@
 		}
 
 		location.reload(true);
-	})
+    }
     $('#usersname').html($.cookie('name'));
 
     function closeModal()
