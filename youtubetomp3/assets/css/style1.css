@@ -11,6 +11,10 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.displayNone
+{
+    display: none;
+}
 .form-structor {
   background-color: #222;
   border-radius: 15px;
