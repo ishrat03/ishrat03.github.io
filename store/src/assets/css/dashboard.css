@@ -1,0 +1,103 @@
+body
+{
+	background-color: whitesmoke!important;
+}
+
+:root
+{
+	--offcanvas-width: 270px;
+	--topNavbarHeight:56px;
+}
+
+.sidebar-nav
+{
+	width: var(--offcanvas-width)!important;
+}
+
+.sidebar-link
+{
+	display: flex !important;
+	align-items: center !important;
+}
+
+.sidebar-link .right-item
+{
+	display: inline-flex !important;
+	transition: all ease 0.5s !important;
+}
+
+.sidebar-link[aria-expanded="true"] .right-item
+{
+	transform: rotate(180deg) !important;
+}
+
+.react-toast-notifications__container
+{
+	z-index: 1100 !important;
+	/* top: 50px !important; */
+}
+
+.bar
+{
+	width: 0;
+	transition: 2s width;
+}
+
+.bar.open
+{
+	width: 100%;
+}
+
+.bar.close
+{
+	width:0%;
+}
+
+@media (max-width:600px)
+{
+	.py-auto
+	{
+		padding-top: .5rem!important;
+		padding-bottom: .5rem!important;
+	}
+
+	.my-2-c
+	{
+		margin-top: .5rem!important;
+		margin-bottom: .5rem!important;
+	}
+}
+
+@media (min-width:650px)
+{
+	.fixed-width
+	{
+		max-height: 650px!important;
+	}
+}
+
+@media (min-width:992px)
+{
+	body
+	{
+		overflow: auto !important;
+	}
+
+	.offcanv-backdrop::before
+	{
+		display: none !important;
+	}
+
+	.sidebar-nav
+	{
+		transform: none!important;
+		visibility: visible !important;
+		top: var(--topNavbarHeight) !important;
+		height: calc(100% - var(--topNavbarHeight)) !important;
+	}
+
+	main
+	{
+		margin-left: var(--offcanvas-width) !important;
+	}
+}

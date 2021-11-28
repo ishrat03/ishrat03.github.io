@@ -1,0 +1,23 @@
+body
+{
+	background-color: #4d90fec7!important;
+}
+.center-box
+{
+	position: fixed;
+	margin: 15% auto;
+	left: 0;
+	right: 0;
+}
+
+.text-right
+{
+	text-align: right;
+}
+
+.card
+{
+	border-radius: 1.25rem!important;
+	box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2)!important;
+	border: 5px solid rgba(0,0,0,.125) !important;
+}

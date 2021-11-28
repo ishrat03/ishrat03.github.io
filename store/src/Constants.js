@@ -1,0 +1,14 @@
+// export const ServiceDomain = 'http://localhost/sms/public/api/v1/';
+export const ServiceDomain = 'https://firstblog2.000webhostapp.com/sms/public/api/v1/';
+export const UPDATE_STD = 'UPDATE_STD';
+export const UPDATE_PAGE_STD = 'UPDATE_PAGE_STD';
+export const UPDATE_CURRENCY = "UPDATE_CURRENCY";
+export const FEES_STD = "FEES_STD";
+export const ADMISSION_STD = 'ADMISSION_STD';
+export const FEES_STD_SET = 'FEES_STD_SET';
+export const UMFT = 'UMFT';
+export const FEESSTRUCTURERED = 'FEESSTRUCTURERED';
+export const FEESSHORTDETAILS = 'FEESSHORTDETAILS';
+export const FEESTOTAL = 'FEESTOTAL';
+export const SELECTEDSTDFS = 'SELECTEDSTDFS';
+export const SESSION = 'SESSION';
